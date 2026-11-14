@@ -1,4 +1,4 @@
-[![Downloads](https://img.shields.io/github/downloads/Integrity-Forensics/Service-Enabler/total?style=for-the-badge&logo=github&label=Downloads&color=blue)](https://github.com/Integrity-Forensics/Service-Enabler/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/Integrity-Forensics/Service-Enabler/1.0/total?style=for-the-badge&logo=github&label=Downloads&color=blue)](https://github.com/Integrity-Forensics/Service-Enabler/releases/tag/1.0)
 ![Last Commit](https://img.shields.io/github/last-commit/Integrity-Forensics/Service-Enabler?style=for-the-badge&logo=git)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Us-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.integrityforensics.net)
 
