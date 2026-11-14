@@ -39,5 +39,58 @@ contextBridge.exposeInMainWorld("windowControls", {
      */
     getBrand() {
         return ipcRenderer.invoke("window:get-brand");
-    }
+    },
+});
+
+/* ==============================================
+ * SERVICE CONTROLS
+ * ============================================== */
+
+contextBridge.exposeInMainWorld("serviceControls", {
+    /**
+     * Grabs info for every configured service.
+     *
+     * @returns {Promise<object[]>}
+     */
+    getAll() {
+        return ipcRenderer.invoke("services:get-all");
+    },
+
+    /**
+     * Enables one service.
+     *
+     * @param {string} serviceKey
+     * @returns {Promise<object>}
+     */
+    enable(serviceKey) {
+        return ipcRenderer.invoke("services:enable", serviceKey);
+    },
+
+    /**
+     * Disables one service.
+     *
+     * @param {string} serviceKey
+     * @returns {Promise<object>}
+     */
+    disable(serviceKey) {
+        return ipcRenderer.invoke("services:disable", serviceKey);
+    },
+
+    /**
+     * Enables every configured service.
+     *
+     * @returns {Promise<object>}
+     */
+    enableAll() {
+        return ipcRenderer.invoke("services:enable-all");
+    },
+
+    /**
+     * Disables every configured service.
+     *
+     * @returns {Promise<object>}
+     */
+    disableAll() {
+        return ipcRenderer.invoke("services:disable-all");
+    },
 });

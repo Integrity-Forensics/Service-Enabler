@@ -1,0 +1,18 @@
+/* ==============================================
+ * SERVICE TOOLBAR
+ * ============================================== */
+
+.service-toolbar {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.service-toolbar-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+}

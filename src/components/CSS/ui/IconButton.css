@@ -1,0 +1,107 @@
+/* ==============================================
+ * ICON BUTTON
+ * ============================================== */
+
+.icon-button-wrap {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--root-border-strong);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--root-text-muted);
+  cursor: pointer;
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease,
+    color 0.12s ease;
+}
+
+.icon-button svg {
+  width: 13px;
+  height: 13px;
+}
+
+.icon-button-small {
+  width: 28px;
+  height: 28px;
+}
+
+.icon-button-large {
+  width: 32px;
+  height: 32px;
+  background: var(--root-surface);
+}
+
+.icon-button:hover:not(:disabled) {
+  color: var(--root-white);
+}
+
+.icon-button-large:hover:not(:disabled) {
+  background: var(--root-surface-hover);
+}
+
+.icon-button:focus-visible {
+  outline: 1px solid var(--root-blue);
+  outline-offset: 1px;
+}
+
+.icon-button:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+/* ==============================================
+ * TONES
+ * ============================================== */
+
+.icon-button-enable:hover:not(:disabled) {
+  border-color: var(--root-green);
+  color: var(--root-green);
+}
+
+.icon-button-disable:hover:not(:disabled) {
+  border-color: var(--root-red);
+  color: var(--root-red);
+}
+
+/* ==============================================
+ * TOOLTIP
+ * ============================================== */
+
+.icon-button-tooltip {
+  position: absolute;
+  z-index: 30;
+  padding: 3px 7px;
+  border: 1px solid var(--root-border-strong);
+  border-radius: 4px;
+  background: var(--root-surface-hover);
+  color: var(--root-white);
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+}
+
+.icon-button-wrap:hover .icon-button-tooltip {
+  opacity: 1;
+}
+
+.icon-button-tooltip-bottom {
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-button-tooltip-left {
+  top: 50%;
+  right: calc(100% + 6px);
+  transform: translateY(-50%);
+}

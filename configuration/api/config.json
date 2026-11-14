@@ -1,10 +1,48 @@
 {
   "brand-url": "https://api.integrityforensics.net",
-  "app-name": "Project Template",
-  "platforms-menu": true,
+  "app-name": "Service Enabler",
+  "platforms-menu": false,
   "platforms": {
     "Minecraft": true,
     "Roblox": true,
     "FiveM": true
-  }
+  },
+  "services": [
+    {
+      "id": "SysMain",
+      "description": "Manages memory prefetch and system performance caching."
+    },
+    {
+      "id": "DPS",
+      "description": "Runs problem detection and diagnostic troubleshooting."
+    },
+    {
+      "id": "BAM",
+      "description": "Tracks background app activity for system moderation."
+    },
+    {
+      "id": "EventLog",
+      "description": "Records and serves Windows event log data."
+    },
+    {
+      "id": "Schedule",
+      "description": "Runs scheduled tasks and maintenance jobs."
+    },
+    {
+      "id": "PcaSvc",
+      "description": "Handles program compatibility assistance checks."
+    },
+    {
+      "id": "CDPUserSvc_*",
+      "description": "Supports connected devices for the signed-in user."
+    },
+    {
+      "id": "DcomLaunch",
+      "description": "Starts DCOM and RPC services used by Windows components."
+    },
+    {
+      "id": "DiagTrack",
+      "description": "Collects diagnostic and telemetry data for Microsoft."
+    }
+  ]
 }

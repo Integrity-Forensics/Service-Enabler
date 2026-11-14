@@ -107,7 +107,7 @@
   padding: 26px 16px 22px;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--root-white) 8%, transparent);
-  border-radius: 6px;
+  border-radius: var(--root-radius-panel);
   background:
     linear-gradient(
       160deg,
@@ -161,7 +161,7 @@
 }
 
 .platform-card:hover:not(:disabled) {
-  border-color: color-mix(in srgb, var(--root-white) 8%, transparent);
+  border-color: var(--root-border-strong);
   background:
     linear-gradient(
       160deg,
@@ -186,9 +186,15 @@
   color: var(--root-white);
 }
 
-.platform-card:focus,
-.platform-card:focus-visible {
+.platform-card:focus {
   outline: none;
+}
+
+.platform-card:focus-visible {
+  border-color: color-mix(in srgb, var(--root-blue) 60%, transparent);
+  box-shadow:
+    0 0 0 3px var(--root-blue-soft),
+    0 14px 30px var(--root-shadow);
 }
 
 .platform-card:disabled {

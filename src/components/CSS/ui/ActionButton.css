@@ -1,0 +1,62 @@
+/* ==============================================
+ * ACTION BUTTON
+ * ============================================== */
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--root-border-strong);
+  border-radius: 6px;
+  background: var(--root-surface);
+  color: var(--root-text);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease,
+    color 0.12s ease;
+}
+
+.action-button svg {
+  width: 13px;
+  height: 13px;
+}
+
+.action-button:hover:not(:disabled) {
+  background: var(--root-surface-hover);
+}
+
+.action-button:focus-visible {
+  outline: 1px solid var(--root-blue);
+  outline-offset: 1px;
+}
+
+.action-button:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+/* ==============================================
+ * TONES
+ * ============================================== */
+
+.action-button-enable {
+  border-color: var(--root-green);
+  background: var(--root-green);
+  color: var(--root-black);
+  font-weight: 600;
+}
+
+.action-button-enable:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--root-green) 88%, var(--root-white));
+}
+
+.action-button-disable:hover:not(:disabled) {
+  color: color-mix(in srgb, var(--root-red) 40%, var(--root-white));
+}

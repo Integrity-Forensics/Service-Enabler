@@ -12,6 +12,7 @@
   padding: 0 10px 0 16px;
   border-bottom: 1px solid var(--root-border);
   background: color-mix(in srgb, var(--root-surface) 42%, var(--root-background));
+  font-family: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   user-select: none;
   -webkit-app-region: drag;
 }

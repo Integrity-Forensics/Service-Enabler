@@ -1,0 +1,63 @@
+/* ==============================================
+ * SERVICE STATS
+ * ============================================== */
+
+.service-stats {
+  display: grid;
+  flex: 0 0 auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.service-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--root-border);
+  border-radius: var(--root-radius-panel);
+  background: var(--root-surface);
+}
+
+.service-stat-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-stat-head svg {
+  width: 14px;
+  height: 14px;
+}
+
+.service-stat-label {
+  color: var(--root-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.service-stat-value {
+  color: var(--root-white);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==============================================
+ * TONES
+ * ============================================== */
+
+.service-stat-running .service-stat-head {
+  color: var(--root-green);
+}
+
+.service-stat-stopped .service-stat-head {
+  color: var(--root-red);
+}

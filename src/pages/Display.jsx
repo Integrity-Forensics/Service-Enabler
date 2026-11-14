@@ -2,8 +2,16 @@
  * IMPORTS
  * ============================================== */
 
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "motion/react";
+
+import ServiceHeader from "../components/ui/ServiceHeader.jsx";
+import ServiceStats from "../components/ui/ServiceStats.jsx";
+import ServiceTable from "../components/ui/ServiceTable.jsx";
+import ServiceToolbar from "../components/ui/ServiceToolbar.jsx";
+import useServices from "../hooks/useServices.js";
+import { ease } from "../utils/motion.js";
+import { countServices, filterServices } from "../utils/serviceStatus.js";
 
 import "../components/CSS/pages/Display.css";
 
@@ -11,53 +19,60 @@ import "../components/CSS/pages/Display.css";
  * DISPLAY
  * ============================================== */
 
-const ease = [0.16, 1, 0.3, 1];
-
+/**
+ * Main services page.
+ *
+ * @returns {import("react").JSX.Element}
+ */
 export default function Display() {
-  const [title, setTitle] = useState("");
+  const [query, setQuery] = useState("");
+  const services = useServices();
 
-  /**
-   * Load the app name for the home title.
-   */
-  useEffect(() => {
-    const controls = window.windowControls;
+  const visibleServices = useMemo(
+    () => filterServices(services.services, query),
+    [services.services, query],
+  );
 
-    if (!controls?.getAppName) return;
-
-    controls.getAppName().then((appName) => {
-      const label = String(appName || "").trim();
-
-      if (!label) return;
-
-      setTitle(label);
-    });
-  }, []);
+  const counts = useMemo(
+    () => countServices(services.services),
+    [services.services],
+  );
 
   return (
-    <section className="display">
-      {title ? (
-        <>
-          {/* Title */}
-          <motion.h1
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease }}
-          >
-            {title}
-          </motion.h1>
+    <motion.section
+      className="services"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.28, ease }}
+    >
+      <div className="services-panel">
+        {/* Header */}
+        <ServiceHeader />
 
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.14, ease }}
-          >
-            This is the general structure used for tools made for the Integrity
-            Forensics network. It is only a base structure to rely on for new
-            tools in the future, and it has no other functionality besides that.
-          </motion.p>
-        </>
-      ) : null}
-    </section>
+        {/* Overview */}
+        <ServiceStats counts={counts} loading={services.loading} />
+
+        {/* Toolbar */}
+        <ServiceToolbar
+          query={query}
+          busyKey={services.busyKey}
+          locked={services.isBusy || services.loading}
+          onQueryChange={setQuery}
+          onRefresh={services.refresh}
+          onEnableAll={services.enableAll}
+          onDisableAll={services.disableAll}
+        />
+
+        {/* Service list */}
+        <ServiceTable
+          services={visibleServices}
+          loading={services.loading}
+          busyKey={services.busyKey}
+          locked={services.isBusy}
+          onToggle={services.toggle}
+        />
+      </div>
+    </motion.section>
   );
 }

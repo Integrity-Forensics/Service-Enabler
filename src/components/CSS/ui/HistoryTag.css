@@ -1,0 +1,46 @@
+/* ==============================================
+ * HISTORY TAG
+ * ============================================== */
+
+.history-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 100%;
+  font-size: 11px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.history-tag svg {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+}
+
+.history-tag-label {
+  flex: 0 0 auto;
+}
+
+.history-tag-time {
+  overflow: hidden;
+  color: var(--root-text-muted);
+  text-overflow: ellipsis;
+}
+
+/* ==============================================
+ * TONES
+ * ============================================== */
+
+.history-tag-started {
+  color: color-mix(in srgb, var(--root-green) 60%, var(--root-white));
+}
+
+.history-tag-stopped {
+  color: color-mix(in srgb, var(--root-red) 55%, var(--root-white));
+}
+
+.history-tag-config,
+.history-tag-config .history-tag-time {
+  color: var(--root-blue);
+}

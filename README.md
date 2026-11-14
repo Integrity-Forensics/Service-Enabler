@@ -1,8 +1,9 @@
-![Last Commit](https://img.shields.io/github/last-commit/Integrity-Forensics/Project-Template?style=for-the-badge&logo=git)
+[![Downloads](https://img.shields.io/github/downloads/Integrity-Forensics/Service-Enabler/total?style=for-the-badge&logo=github&label=Downloads&color=blue)](https://github.com/Integrity-Forensics/Service-Enabler/releases/latest)
+![Last Commit](https://img.shields.io/github/last-commit/Integrity-Forensics/Service-Enabler?style=for-the-badge&logo=git)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Us-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.integrityforensics.net)
 
-# 🛠️ IF Project Template
-A clean **Electron + React** template used to make new tools for the **Integrity Forensics** network, so all of them follow a similar structure.
+# ⚙️ Service Enabler
+A simple tool to check and enable all required system services for a screenshare.
 
 Built with **JavaScript**, **Vite**, and **React**, and completely **open-source**. 💚
 
@@ -10,6 +11,14 @@ Built with **JavaScript**, **Vite**, and **React**, and completely **open-source
 > Windows may display a security warning because the application is not currently code-signed.
 
 The code is **far from perfect**, so improvements and pull requests are always welcome! ❤️
+
+---
+
+### ❓ Status
+This project is still in early beta and is subject to change at any given time!
+
+> [!WARNING]
+> The project is in version **v1.0 BETA** 🟡. Bugs are expected!
 
 ---
 
@@ -31,11 +40,36 @@ Purpose here...
 
 ---
 
-### ✅ Included Platforms & Stack
+### ✅ Supported Services & Platforms
 
 <table>
 <tr>
-<td valign="top" width="50%">
+<td valign="top" width="33%">
+
+#### 🛠️ Services (Part 1)
+
+| Service  | Status |
+| -------- | :----: |
+| SysMain  |   🟢   |
+| DPS      |   🟢   |
+| BAM      |   🟢   |
+| EventLog |   🟢   |
+| Schedule |   🟢   |
+
+</td>
+<td valign="top" width="33%">
+
+#### 🛠️ Services (Part 2)
+
+| Service      | Status |
+| ------------ | :----: |
+| PcaSvc       |   🟢   |
+| CDPUserSvc_* |   🟢   |
+| DcomLaunch   |   🟢   |
+| DiagTrack    |   🟢   |
+
+</td>
+<td valign="top" width="34%">
 
 #### 🎮 Platforms
 
@@ -46,18 +80,13 @@ Purpose here...
 | FiveM     |   🟢   |
 
 </td>
-<td valign="top" width="50%">
-
-#### 🧱 Stack
-
-| Piece     | Status |
-| --------- | :----: |
-| Electron  |   🟢   |
-| React     |   🟢   |
-| Vite      |   🟢   |
-| Motion    |   🟢   |
-| Lucide    |   🟢   |
-
-</td>
 </tr>
 </table>
+
+---
+
+### 👀 Preview
+
+<div align="center">
+  <img src="assets/preview.png" alt="Service Enabler preview" width="1196" />
+</div>

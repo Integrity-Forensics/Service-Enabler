@@ -1,0 +1,69 @@
+/* ==============================================
+ * SERVICE TABLE
+ * ============================================== */
+
+.service-table {
+  --service-columns: minmax(0, 1fr) 190px 112px 44px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid var(--root-border);
+  border-radius: var(--root-radius-panel);
+  background: var(--root-surface);
+}
+
+/* ==============================================
+ * HEAD
+ * ============================================== */
+
+.service-table-head {
+  display: grid;
+  grid-template-columns: var(--service-columns);
+  flex: 0 0 auto;
+  align-items: center;
+  column-gap: 16px;
+  height: 32px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--root-border);
+  background: var(--root-surface-raised);
+  color: var(--root-text-muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.service-table-head span:last-child {
+  text-align: right;
+}
+
+/* ==============================================
+ * LIST
+ * ============================================== */
+
+.service-table-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.service-table-state {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 160px;
+  color: var(--root-text-muted);
+  font-size: 13px;
+}
+
+.service-table-state svg {
+  width: 18px;
+  height: 18px;
+}

@@ -1,23 +1,23 @@
 /* ==============================================
- * DISPLAY
+ * SERVICES PAGE
  * ============================================== */
 
-.display {
-  width: min(100%, 520px);
-  text-align: center;
+.services {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow: hidden;
+  text-align: left;
+  background: color-mix(in srgb, var(--root-black) 55%, var(--root-background));
 }
 
-.display h1 {
-  margin: 0 0 12px;
-  color: var(--root-white);
-  font-size: 34px;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-}
-
-.display p {
-  margin: 0;
-  color: var(--root-text-muted);
-  font-size: 15px;
-  line-height: 1.65;
+.services-panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 24px 28px;
 }

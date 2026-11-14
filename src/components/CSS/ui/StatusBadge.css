@@ -1,0 +1,46 @@
+/* ==============================================
+ * STATUS BADGE
+ * ============================================== */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 6px;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--root-white) 7%, transparent);
+  color: var(--root-text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.status-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ==============================================
+ * TONES
+ * ============================================== */
+
+.status-badge-running {
+  background: var(--root-green-soft);
+  color: color-mix(in srgb, var(--root-green) 70%, var(--root-white));
+}
+
+.status-badge-protected {
+  background: var(--root-warning-soft);
+  color: color-mix(in srgb, var(--root-warning) 60%, var(--root-white));
+}
+
+.status-badge-stopped {
+  background: var(--root-red-soft);
+  color: color-mix(in srgb, var(--root-red) 60%, var(--root-white));
+}
+
+.status-badge-stopped .status-dot {
+  background: var(--root-red);
+}

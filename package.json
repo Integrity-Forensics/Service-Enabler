@@ -1,7 +1,7 @@
 {
-  "name": "project-template",
-  "version": "0.0.1",
-  "description": "Project development template for the IF Network. This template is used for creating all IF tools.",
+  "name": "service-enabler",
+  "version": "1.0.0",
+  "description": "A simple tool to check and enable all required system services for a screenshare.",
   "private": true,
   "author": "Integrity-Forensics",
   "license": "MIT",

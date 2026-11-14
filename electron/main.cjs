@@ -11,6 +11,13 @@ const { pathToFileURL } = require("url");
 
 const { fetchBranding, getAppName } = require("../utils/fetchBranding.cjs");
 const fetchDist = require("../utils/fetchDist.cjs");
+const {
+    getAllServiceInfo,
+    enableService,
+    disableService,
+    enableAllServices,
+    disableAllServices,
+} = require("../utils/service-util/index.cjs");
 
 /* ==============================================
  * CONFIGURATION
@@ -124,6 +131,33 @@ function bindWindowControls() {
 }
 
 /**
+ * Wires up the service enable / disable handlers.
+ *
+ * @returns {void}
+ */
+function bindServiceControls() {
+    ipcMain.handle("services:get-all", async () => {
+        return getAllServiceInfo(ROOT_DIR);
+    });
+
+    ipcMain.handle("services:enable", async (_event, serviceKey) => {
+        return enableService(ROOT_DIR, String(serviceKey || ""));
+    });
+
+    ipcMain.handle("services:disable", async (_event, serviceKey) => {
+        return disableService(ROOT_DIR, String(serviceKey || ""));
+    });
+
+    ipcMain.handle("services:enable-all", async () => {
+        return enableAllServices(ROOT_DIR);
+    });
+
+    ipcMain.handle("services:disable-all", async () => {
+        return disableAllServices(ROOT_DIR);
+    });
+}
+
+/**
  * Creates the main window.
  *
  * @param {object} brand
@@ -211,6 +245,7 @@ app.whenReady().then(async () => {
      */
     Menu.setApplicationMenu(null);
     bindWindowControls();
+    bindServiceControls();
 
     const brand = await fetchBranding(ROOT_DIR);
     const appName = getAppName(ROOT_DIR);

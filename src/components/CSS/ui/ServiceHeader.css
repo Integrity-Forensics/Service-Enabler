@@ -1,0 +1,17 @@
+/* ==============================================
+ * SERVICE HEADER
+ * ============================================== */
+
+.service-header {
+  flex: 0 0 auto;
+  margin-bottom: 16px;
+}
+
+.service-header h1 {
+  margin: 0;
+  color: var(--root-white);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+}
